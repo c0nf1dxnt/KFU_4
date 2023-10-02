@@ -25,6 +25,25 @@ namespace Part1
             }
             return Fibonacchi(a - 1) + Fibonacchi(a - 2);
         }
+        static int GCD(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                {
+                    a -= b;
+                }
+                else
+                {
+                    b -= a;
+                }
+            }
+            return a;
+        }
+        static int GCD(int a, int b, int c)
+        {
+            return GCD(GCD(a, b), c);
+        }
         static void Task1()
         {
             Console.WriteLine("Задание №1:\n");
@@ -55,6 +74,18 @@ namespace Part1
                 Console.WriteLine("Вы ввели не целое число или строку!\n");
             }
         }
+        static void Task5()
+        {
+            Console.WriteLine("Задание №5:\n");
+            Random random = new Random();
+            int number1 = random.Next(50);
+            int number2 = random.Next(50);
+            int number3 = random.Next(50);
+            Console.WriteLine(number1);
+            Console.WriteLine(number2);
+            Console.WriteLine(number3);
+            Console.WriteLine(GCD(number1,number2,number3) + "\n");
+        }
         static void Task6()
         {
             Console.WriteLine("Задание №6:\n");
@@ -71,11 +102,13 @@ namespace Part1
         }
         static void Main(string[] args)
         {
+            Console.Title = "Skynet";
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
             Task1();
             Task4();
+            Task5();
             Task6();
 
             Console.ReadKey();
