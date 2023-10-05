@@ -191,17 +191,16 @@ namespace Part2
             string[] GrandFather3Phrases = { "Сука", "Подонок", "Паскуда", "Котёнок", "Ишак" };
             string[] GrandFather4Phrases = { "Тварь", "Сука", "Подонок" };
             string[] GrandFather5Phrases = { "Тварь", "Мразь", "Подонок", "Блять" };
-            GrandFather[] GrandFathers = new GrandFather[5];
-            GrandFathers[0] = new GrandFather("Александр", LevelOfGrouchiness.Низкий, GrandFather1Phrases);
-            GrandFathers[1] = new GrandFather("Григорий", LevelOfGrouchiness.Средний, GrandFather2Phrases);
-            GrandFathers[2] = new GrandFather("Владимир", LevelOfGrouchiness.Высокий, GrandFather3Phrases);
-            GrandFathers[3] = new GrandFather("Евгений", LevelOfGrouchiness.Максимальный, GrandFather4Phrases);
-            GrandFathers[4] = new GrandFather("Алексей", LevelOfGrouchiness.Эпический, GrandFather5Phrases);
-            Console.WriteLine($"Дед {GrandFathers[0].Name} получил {GrandFathers[0].CheckPhrases(BadWords)} синяков");
-            Console.WriteLine($"Дед {GrandFathers[1].Name} получил {GrandFathers[1].CheckPhrases(BadWords)} синяков");
-            Console.WriteLine($"Дед {GrandFathers[2].Name} получил {GrandFathers[2].CheckPhrases(BadWords)} синяков");
-            Console.WriteLine($"Дед {GrandFathers[3].Name} получил {GrandFathers[3].CheckPhrases(BadWords)} синяков");
-            Console.WriteLine($"Дед {GrandFathers[4].Name} получил {GrandFathers[4].CheckPhrases(BadWords)} синяков");
+            GrandFather Grandfather1 = new GrandFather("Александр", LevelOfGrouchiness.Низкий, GrandFather1Phrases);
+            GrandFather Grandfather2= new GrandFather("Григорий", LevelOfGrouchiness.Средний, GrandFather2Phrases);
+            GrandFather Grandfather3 = new GrandFather("Владимир", LevelOfGrouchiness.Высокий, GrandFather3Phrases);
+            GrandFather Grandfather4 = new GrandFather("Евгений", LevelOfGrouchiness.Максимальный, GrandFather4Phrases);
+            GrandFather Grandfather5 = new GrandFather("Алексей", LevelOfGrouchiness.Эпический, GrandFather5Phrases);
+            Console.WriteLine($"Дед {Grandfather1.Name} получил {Grandfather1.CheckPhrases(BadWords)} синяков");
+            Console.WriteLine($"Дед {Grandfather2.Name} получил {Grandfather2.CheckPhrases(BadWords)} синяков");
+            Console.WriteLine($"Дед {Grandfather3.Name} получил {Grandfather3.CheckPhrases(BadWords)} синяков");
+            Console.WriteLine($"Дед {Grandfather4.Name} получил {Grandfather4.CheckPhrases(BadWords)} синяков");
+            Console.WriteLine($"Дед {Grandfather5.Name} получил {Grandfather5.CheckPhrases(BadWords)} синяков");
         }
         static void Main(string[] args)
         {
@@ -209,9 +208,9 @@ namespace Part2
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            Task1();
-            Task2();
-            Task3();
+            //Task1();
+            //Task2();
+            //Task3();
             Task4();
 
             Console.ReadKey();
