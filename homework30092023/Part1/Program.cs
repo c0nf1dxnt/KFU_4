@@ -13,16 +13,12 @@ namespace Part1
         {
             (a, b) = (b, a);
         }
-        static void SwapValues(ref decimal a, ref decimal b)
-        {
-            (a, b) = (b, a);
-        }
         static bool CheckFactorial(int a, out long b)
         {
             try
             {
                 b = 1;
-                for (int i = 2; i < a + 1; i++)
+                for (int i = 1; i <= a; i++)
                 {
                     b = checked(b * i);
                 }
@@ -42,7 +38,7 @@ namespace Part1
             }
             return a * FindFactorial(a - 1);
         }
-        static long Fibonacchi(int a)
+        static long FindFibonacchi(int a)
         {
             if (a == 0)
             {
@@ -52,9 +48,9 @@ namespace Part1
             {
                 return 1;
             }
-            return Fibonacchi(a - 1) + Fibonacchi(a - 2);
+            return FindFibonacchi(a - 1) + FindFibonacchi(a - 2);
         }
-        static int GCD(int a, int b)
+        static int FindGCD(int a, int b)
         {
             while (a != b)
             {
@@ -69,18 +65,18 @@ namespace Part1
             }
             return a;
         }
-        static int GCD(int a, int b, int c)
+        static int FindGCD(int a, int b, int c)
         {
-            return GCD(GCD(a, b), c);
+            return FindGCD(FindGCD(a, b), c);
         }
         static void Task1()
         {
-            Console.WriteLine("Задание №1:\n");
+            Console.WriteLine("Задание №1:\nНаписать метод, возвращающий наибольшее из двух целых чисел");
             Console.Write("Введите первое число: ");
             string InputString1 = Console.ReadLine();
             Console.Write("Введите второе число: ");
             string InputString2 = Console.ReadLine();
-            if (Int32.TryParse(InputString1, out int     number1) & Int32.TryParse(InputString2, out int number2))
+            if (Int32.TryParse(InputString1, out int number1) & Int32.TryParse(InputString2, out int number2))
             {
                 Console.WriteLine($"Наибольшее число равно: {FindMax(number1, number2)}\n");
             }
@@ -91,7 +87,7 @@ namespace Part1
         }
         static void Task2()
         {
-            Console.WriteLine("Задание №2:\n");
+            Console.WriteLine("Задание №2:\nНаписать метод, меняющий местами значения двух передаваемых параметров");
             Console.Write("Введите первое число: ");
             string InputString1 = Console.ReadLine();
             Console.Write("Введите второе число: ");
@@ -108,7 +104,7 @@ namespace Part1
         }
         static void Task3()
         {
-            Console.WriteLine("Задание №3:\n");
+            Console.WriteLine("Задание №3:\nНаписать метод вычисления факториала через цикл, проверять переполнение через checked");
             Console.Write("Введите число: ");
             string inputString = Console.ReadLine();
             if (int.TryParse(inputString, out int number))
@@ -129,7 +125,7 @@ namespace Part1
         }
         static void Task4()
         {
-            Console.WriteLine("Задание №4:\n");
+            Console.WriteLine("Задание №4:\nНаписать метод вычисления факториала через рекурсию ");
             Console.Write("Введите число: ");
             string InputString1 = Console.ReadLine();
             if (Int32.TryParse(InputString1, out int number))
@@ -143,7 +139,7 @@ namespace Part1
         }
         static void Task5()
         {
-            Console.WriteLine("Задание №5:\n");
+            Console.WriteLine("Задание №5:\nНаписать два метода, первый возвращает НОД двух натуральных чисел, второй возвращает НОД трёх натуральных чисел");
             Console.Write("Введите первое число: ");
             string InputString1 = Console.ReadLine();
             Console.Write("Введите второе число: ");
@@ -152,7 +148,7 @@ namespace Part1
             string InputString3 = Console.ReadLine();
             if (Int32.TryParse(InputString1, out int number1) & Int32.TryParse(InputString2, out int number2) & (Int32.TryParse(InputString3, out int number3)))
             {
-                Console.WriteLine($"НОД трёх введённых чисел равен: {GCD(number1,number2,number3)}\n");
+                Console.WriteLine($"НОД трёх введённых чисел равен: {FindGCD(number1, number2, number3)}\n");
             }
             else
             {
@@ -161,12 +157,12 @@ namespace Part1
         }
         static void Task6()
         {
-            Console.WriteLine("Задание №6:\n");
+            Console.WriteLine("Задание №6:\nНаписать рекурсивный метод вычисления n-ого числа ряда Фибоначчи");
             Console.Write("Введите число: ");
             string InputString1 = Console.ReadLine();
             if (Int32.TryParse(InputString1, out int number))
             {
-                Console.WriteLine($"Элемент ряда Фибоначчи под номером {number} = {Fibonacchi(number)}\n");
+                Console.WriteLine($"Элемент ряда Фибоначчи под номером {number} = {FindFibonacchi(number)}\n");
             }
             else
             {
