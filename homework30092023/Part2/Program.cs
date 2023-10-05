@@ -208,9 +208,9 @@ namespace Part2
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
 
-            //Task1();
-            //Task2();
-            //Task3();
+            Task1();
+            Task2();
+            Task3();
             Task4();
 
             Console.ReadKey();
